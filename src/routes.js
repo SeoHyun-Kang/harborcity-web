@@ -27,19 +27,13 @@ import UserPage from "views/UserPage.js";
 var dashRoutes = [
   {
     path: "/dashboard",
-    name: "Dashboard",
-    icon: "design_app",
+    name: "홈",
+    icon: "business_bulb-63",
     component: Dashboard,
     layout: "/admin",
   },
-  {
-    path: "/icons",
-    name: "Icons",
-    icon: "design_image",
-    component: Icons,
-    layout: "/admin",
-  },
-  {
+
+  /*{
     path: "/maps",
     name: "Maps",
     icon: "location_map-big",
@@ -52,12 +46,19 @@ var dashRoutes = [
     icon: "ui-1_bell-53",
     component: Notifications,
     layout: "/admin",
-  },
+  },*/
   {
     path: "/user-page",
-    name: "User Profile",
+    name: "회원정보",
     icon: "users_single-02",
     component: UserPage,
+    layout: "/admin",
+  },
+  {
+    path: "/icons",
+    name: "Icons",
+    icon: "design_image",
+    component: Icons,
     layout: "/admin",
   },
   {
@@ -67,7 +68,7 @@ var dashRoutes = [
     component: TableList,
     layout: "/admin",
   },
-  {
+  /*{
     path: "/typography",
     name: "Typography",
     icon: "design-2_ruler-pencil",
@@ -81,6 +82,6 @@ var dashRoutes = [
     icon: "objects_spaceship",
     component: Upgrade,
     layout: "/admin",
-  },
+  },*/
 ];
 export default dashRoutes;
