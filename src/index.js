@@ -32,5 +32,5 @@ ReactDOM.render(
       <Redirect to="/admin/dashboard" />
     </Switch>
   </BrowserRouter>,
-  document.getElementById("message")
+  document.getElementById("root")
 );
