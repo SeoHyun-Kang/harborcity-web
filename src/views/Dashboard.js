@@ -18,6 +18,7 @@
 import React from "react";
 // react plugin used to create charts
 import { Line, Bar } from "react-chartjs-2";
+//import firebase from '../firebase';
 
 // reactstrap components
 import {
@@ -49,6 +50,7 @@ import {
   dashboardAllProductsChart,
   dashboard24HoursPerformanceChart,
 } from "variables/charts.js";
+import firebaseConfig from "../firebase";
 
 function Dashboard() {
   return (
@@ -69,24 +71,8 @@ function Dashboard() {
               <CardHeader>
                 <h5 className="card-category">Global Sales</h5>
                 <CardTitle tag="h4">Shipped Products</CardTitle>
-                <UncontrolledDropdown>
-                  <DropdownToggle
-                    className="btn-round btn-outline-default btn-icon"
-                    color="default"
-                  >
-                    <i className="now-ui-icons loader_gear" />
-                  </DropdownToggle>
-                  <DropdownMenu right>
-                    <DropdownItem>Action</DropdownItem>
-                    <DropdownItem>Another Action</DropdownItem>
-                    <DropdownItem>Something else here</DropdownItem>
-                    <DropdownItem className="text-danger">
-                      Remove data
-                    </DropdownItem>
-                  </DropdownMenu>
-                </UncontrolledDropdown>
               </CardHeader>
-              <CardBody>
+              <CardBody> 
                 <div className="chart-area">
                   <Line
                     data={dashboardShippedProductsChart.data}

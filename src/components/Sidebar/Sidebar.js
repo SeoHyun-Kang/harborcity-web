@@ -49,20 +49,20 @@ function Sidebar(props) {
     <div className="sidebar" data-color={props.backgroundColor}>
       <div className="logo">
         <a
-          href="https://www.creative-tim.com?ref=nudr-sidebar"
+          href="/admin/dashboard"
           className="simple-text logo-mini"
-          target="_blank"
+          target="_top"
         >
           <div className="logo-img">
-            <img src={logo} alt="react-logo" />
+            <img  src="https://d29fhpw069ctt2.cloudfront.net/icon/image/48986/preview.svg" alt="react-logo" />
           </div>
         </a>
         <a
-          href="https://www.creative-tim.com?ref=nudr-sidebar"
+          href="/admin/dashboard"
           className="simple-text logo-normal"
-          target="_blank"
+          target="_top"
         >
-          Creative Tim
+          Harborcity
         </a>
       </div>
       <div className="sidebar-wrapper" ref={sidebar}>

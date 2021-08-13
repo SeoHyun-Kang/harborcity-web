@@ -160,7 +160,7 @@ function DemoNavbar(props) {
                 </p>
               </Link>
             </NavItem>
-            <Dropdown
+            {/* <Dropdown
               nav
               isOpen={dropdownOpen}
               toggle={(e) => dropdownToggle(e)}
@@ -176,14 +176,15 @@ function DemoNavbar(props) {
                 <DropdownItem tag="a">Another Action</DropdownItem>
                 <DropdownItem tag="a">Something else here</DropdownItem>
               </DropdownMenu>
-            </Dropdown>
+            </Dropdown> */}
             <NavItem>
-              <Link to="#pablo" className="nav-link">
-                <i className="now-ui-icons users_single-02" />
+            <Link from = "/admin" to="/user-page" className="nav-link">
+              <i className="now-ui-icons users_single-02" />
                 <p>
-                  <span className="d-lg-none d-md-block">Account</span>
+                  <span className="d-lg-none d-md-block"> 마이페이지</span>
                 </p>
-              </Link>
+            </Link>
+                
             </NavItem>
           </Nav>
         </Collapse>

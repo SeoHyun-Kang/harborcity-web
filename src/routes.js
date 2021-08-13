@@ -23,6 +23,7 @@ import TableList from "views/TableList.js";
 import Maps from "views/Maps.js";
 import Upgrade from "views/Upgrade.js";
 import UserPage from "views/UserPage.js";
+import Enrole from "views/Enrole.js";
 
 var dashRoutes = [
   {
@@ -47,13 +48,7 @@ var dashRoutes = [
     component: Notifications,
     layout: "/admin",
   },*/
-  {
-    path: "/user-page",
-    name: "회원정보",
-    icon: "users_single-02",
-    component: UserPage,
-    layout: "/admin",
-  },
+  
   {
     path: "/icons",
     name: "Icons",
@@ -66,6 +61,20 @@ var dashRoutes = [
     name: "Table List",
     icon: "files_paper",
     component: TableList,
+    layout: "/admin",
+  },
+  {
+    path: "/user-page",
+    name: "마이페이지",
+    icon: "users_single-02",
+    component: UserPage,
+    layout: "/admin",
+  },
+  {
+    path: "/enrollment",
+    name: "회원가입/정보수정",
+    icon: "emoticons_satisfied",
+    component: Enrole,
     layout: "/admin",
   },
   /*{
