@@ -51,6 +51,7 @@ import {
   dashboard24HoursPerformanceChart,
 } from "variables/charts.js";
 import firebaseConfig from "../firebase";
+import { resultchart } from "variables/charts";
 
 function Dashboard() {
   return (
@@ -66,11 +67,11 @@ function Dashboard() {
       />
       <div className="content">
         <Row>
-          <Col xs={12} md={4}>
+          <Col xs={12} md={4}> //1번째 차트
             <Card className="card-chart">
               <CardHeader>
-                <h5 className="card-category">Global Sales</h5>
-                <CardTitle tag="h4">Shipped Products</CardTitle>
+                <h5 className="card-category">2021 교육 이수</h5>
+                <CardTitle tag="h4">월별 교육 이수 예정표</CardTitle>
               </CardHeader>
               <CardBody> 
                 <div className="chart-area">
@@ -88,11 +89,11 @@ function Dashboard() {
               </CardFooter>
             </Card>
           </Col>
-          <Col xs={12} md={4}>
+          <Col xs={12} md={4}> //2번째 차트
             <Card className="card-chart">
               <CardHeader>
-                <h5 className="card-category">2021 Sales</h5>
-                <CardTitle tag="h4">All products</CardTitle>
+                <h5 className="card-category">2021 근무 일정</h5>
+                <CardTitle tag="h4">일정 관리표</CardTitle>
                 <UncontrolledDropdown>
                   <DropdownToggle
                     className="btn-round btn-outline-default btn-icon"
@@ -126,25 +127,20 @@ function Dashboard() {
               </CardFooter>
             </Card>
           </Col>
-          <Col xs={12} md={4}>
+          <Col xs={12} md={4}> //3번째 차트
             <Card className="card-chart">
               <CardHeader>
-                <h5 className="card-category">Email Statistics</h5>
-                <CardTitle tag="h4">24 Hours Performance</CardTitle>
+                <h5 className="card-category">점수 분포도</h5>
+                <CardTitle tag="h4">교육 이수 점수 결과 표</CardTitle>
               </CardHeader>
               <CardBody>
                 <div className="chart-area">
                   <Bar
-                    data={dashboard24HoursPerformanceChart.data}
-                    options={dashboard24HoursPerformanceChart.options}
+                    data={resultchart.data}
+                    options={resultchart.options}
                   />
                 </div>
               </CardBody>
-              <CardFooter>
-                <div className="stats">
-                  <i className="now-ui-icons ui-2_time-alarm" /> Last 7 days
-                </div>
-              </CardFooter>
             </Card>
           </Col>
         </Row>

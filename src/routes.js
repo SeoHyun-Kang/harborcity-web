@@ -58,7 +58,7 @@ var dashRoutes = [
   },
   {
     path: "/extended-tables",
-    name: "Table List",
+    name: "",
     icon: "files_paper",
     component: TableList,
     layout: "/admin",

@@ -178,7 +178,7 @@ function DemoNavbar(props) {
               </DropdownMenu>
             </Dropdown> */}
             <NavItem>
-            <Link from = "/admin" to="/user-page" className="nav-link">
+            <Link to = "#pablo" className="nav-link">
               <i className="now-ui-icons users_single-02" />
                 <p>
                   <span className="d-lg-none d-md-block"> 마이페이지</span>

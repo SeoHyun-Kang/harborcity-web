@@ -31,9 +31,59 @@ import {
 } from "reactstrap";
 
 // core components
-import PanelHeader from "components/PanelHeader/PanelHeader.js";
+//import PanelHeader from "components/PanelHeader/PanelHeader.js";
+import FacebookLogin from '@greatsumini/react-facebook-login';
 
-function User() {
+export default function FacebookLoginButton() {
+  return (
+    <FacebookLogin
+      appId="발급받은 앱 ID"
+      onSuccess={(response) => {
+        console.log('Login Success!');
+        console.log('id: ', response.id);
+      }}
+      onFail={(error) => {
+        console.log('Login Failed!');
+        console.log('status: ', error.status);
+      }}
+      onProfileSuccess={(response) => {
+        console.log('Get Profile Success!');
+        console.log('name: ', response.name);
+      }}
+    />
+  );
+}
+
+function FacebookLoginButton({ requestLogin }: LoginButtonProps) {
+  return (
+    <FacebookLogin
+      appId={process.env.FB_APP_ID}
+      onProfileSuccess={(response) => {
+        requestLogin({
+          Provider: ProviderType.Facebook,
+          id: response['id'],
+        });
+      }}
+      onFail={() => {
+        alert('비정상적인 결과입니다. 다시 시도해주세요!');
+      }}
+      render={({ onClick }) => (
+        <Wrapper onClick={onClick}>
+          {/* render prop을 사용할 땐 반드시 onClick을 사용해주세요! */}
+          <FacebookIcon
+            style={{
+              marginRight: '0.8rem',
+            }}
+          />
+          <P level={2} color={WHITE} fontWeight="medium">
+            페이스북으로 시작하기
+          </P>
+        </Wrapper>
+      )}
+    />
+  );
+}
+/*function User() {
   return (
     <>
       <PanelHeader size="sm" />
@@ -124,4 +174,4 @@ function User() {
   );
 }
 
-export default User;
+export default User;*/
