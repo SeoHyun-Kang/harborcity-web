@@ -1,21 +1,4 @@
-/*!
-
-=========================================================
-* Now UI Dashboard React - v1.5.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/now-ui-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/now-ui-dashboard-react/blob/main/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-import React from "react";
+//사이드바(회원가입) : 페이스북 회원가입
 
 // reactstrap components
 import {
@@ -31,63 +14,51 @@ import {
 } from "reactstrap";
 
 // core components
-//import PanelHeader from "components/PanelHeader/PanelHeader.js";
-import FacebookLogin from '@greatsumini/react-facebook-login';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import FacebookLoginWithButton from 'react-facebook-login';
+import PanelHeader from "components/PanelHeader/PanelHeader.js";
+import firebase from 'firebase'
+import { StyledFirebaseAuth } from "react-firebaseui/StyledFirebaseAuth";
 
-export default function FacebookLoginButton() {
-  return (
-    <FacebookLogin
-      appId="발급받은 앱 ID"
-      onSuccess={(response) => {
-        console.log('Login Success!');
-        console.log('id: ', response.id);
-      }}
-      onFail={(error) => {
-        console.log('Login Failed!');
-        console.log('status: ', error.status);
-      }}
-      onProfileSuccess={(response) => {
-        console.log('Get Profile Success!');
-        console.log('name: ', response.name);
-      }}
-    />
-  );
+const componentClicked = () => {
+  console.log( "Clicked!" )
 }
 
-function FacebookLoginButton({ requestLogin }: LoginButtonProps) {
-  return (
-    <FacebookLogin
-      appId={process.env.FB_APP_ID}
-      onProfileSuccess={(response) => {
-        requestLogin({
-          Provider: ProviderType.Facebook,
-          id: response['id'],
-        });
-      }}
-      onFail={() => {
-        alert('비정상적인 결과입니다. 다시 시도해주세요!');
-      }}
-      render={({ onClick }) => (
-        <Wrapper onClick={onClick}>
-          {/* render prop을 사용할 땐 반드시 onClick을 사용해주세요! */}
-          <FacebookIcon
-            style={{
-              marginRight: '0.8rem',
-            }}
-          />
-          <P level={2} color={WHITE} fontWeight="medium">
-            페이스북으로 시작하기
-          </P>
-        </Wrapper>
-      )}
-    />
-  );
-}
-/*function User() {
+const LoginButton = ({facebookResponse}) => (
+  <FacebookLoginWithButton
+    appId="516220549446952"
+    autoLoad={true}
+    fields="name,email,picture"
+    onClick={componentClicked}
+    callback={facebookResponse}
+    icon="fa-facebook"
+  />
+  )
+
+function Enrole() {
+  state = {isSignedIn : false}
+  uiConfig = {
+    signInFlow = "popup",
+    signInOptions: [
+      firebase.auth.FacebookAuthProvider.PROVIDER_ID
+    ],
+    callbacks:{
+      signInSuccess: () => false
+    }
+  }
   return (
     <>
       <PanelHeader size="sm" />
-      <div className="content">
+      <div className="Enrole">  
+        {this.state.isSignedIN ? (
+          <div> Signed In</div>
+        ) : (
+          <div>Not Signed In</div>
+        )}
+          </div>
+
+      {/*<div className="content">
         <Row>
           <Col md="10">
             <Card>
@@ -169,9 +140,9 @@ function FacebookLoginButton({ requestLogin }: LoginButtonProps) {
             </Card>
           </Col>
         </Row>
-      </div>
+  </div>*/}
     </>
   );
 }
 
-export default User;*/
+export default Enrole;

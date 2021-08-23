@@ -414,6 +414,11 @@ const dashboard24HoursPerformanceChart = {
     },
   },
 };
+
+// ##############################
+// // // Dashboard view - 교육 점수 차트
+// #############################
+
 const resultchart = {
   data: (canvas) => {
     var ctx = canvas.getContext("2d");

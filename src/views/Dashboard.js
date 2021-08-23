@@ -1,24 +1,9 @@
-/*!
+//사이드바(홈) : 시작 페이지(메인)
 
-=========================================================
-* Now UI Dashboard React - v1.5.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/now-ui-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/now-ui-dashboard-react/blob/main/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 // react plugin used to create charts
 import { Line, Bar } from "react-chartjs-2";
-//import firebase from '../firebase';
+//import firebase from '/../firebase';
 
 // reactstrap components
 import {
@@ -141,6 +126,11 @@ function Dashboard() {
                   />
                 </div>
               </CardBody>
+              <CardFooter>
+                <div className="stats">
+                  <i className="now-ui-icons ui-2_time-alarm" /> Last 7 days
+                </div>
+              </CardFooter>
             </Card>
           </Col>
         </Row>

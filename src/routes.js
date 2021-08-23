@@ -1,20 +1,6 @@
-/*!
+//사이드바 메뉴 설정 (이름, 페이지링크)
 
-=========================================================
-* Now UI Dashboard React - v1.5.0
-=========================================================
 
-* Product Page: https://www.creative-tim.com/product/now-ui-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/now-ui-dashboard-react/blob/main/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import Dashboard from "views/Dashboard.js";
 import Notifications from "views/Notifications.js";
 import Icons from "views/Icons.js";
@@ -58,7 +44,7 @@ var dashRoutes = [
   },
   {
     path: "/extended-tables",
-    name: "",
+    name: "교육 이수 목록",
     icon: "files_paper",
     component: TableList,
     layout: "/admin",

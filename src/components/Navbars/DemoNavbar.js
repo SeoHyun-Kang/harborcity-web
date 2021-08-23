@@ -1,20 +1,5 @@
-/*!
+// 상단 메뉴 바
 
-=========================================================
-* Now UI Dashboard React - v1.5.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/now-ui-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/now-ui-dashboard-react/blob/main/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
@@ -152,7 +137,7 @@ function DemoNavbar(props) {
             </InputGroup>
           </form>
           <Nav navbar>
-            <NavItem>
+            {/*<NavItem>
               <Link to="#pablo" className="nav-link">
                 <i className="now-ui-icons media-2_sound-wave" />
                 <p>
@@ -160,28 +145,14 @@ function DemoNavbar(props) {
                 </p>
               </Link>
             </NavItem>
-            {/* <Dropdown
-              nav
-              isOpen={dropdownOpen}
-              toggle={(e) => dropdownToggle(e)}
-            >
-              <DropdownToggle caret nav>
-                <i className="now-ui-icons location_world" />
-                <p>
-                  <span className="d-lg-none d-md-block">Some Actions</span>
-                </p>
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem tag="a">Action</DropdownItem>
-                <DropdownItem tag="a">Another Action</DropdownItem>
-                <DropdownItem tag="a">Something else here</DropdownItem>
-              </DropdownMenu>
-            </Dropdown> */}
+            */}
+           
+
             <NavItem>
-            <Link to = "#pablo" className="nav-link">
+            <Link to = "/enrollment/" className="nav-link" href="/enrollment">
               <i className="now-ui-icons users_single-02" />
                 <p>
-                  <span className="d-lg-none d-md-block"> 마이페이지</span>
+                  <span className="d-lg-none d-md-block"> 회원가입</span>
                 </p>
             </Link>
                 

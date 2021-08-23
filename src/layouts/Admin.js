@@ -24,7 +24,7 @@ import { Route, Switch, Redirect, useLocation } from "react-router-dom";
 
 // core components
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
-import Footer from "components/Footer/Footer.js";
+//import Footer from "components/Footer/Footer.js";
 import Sidebar from "components/Sidebar/Sidebar.js";
 import FixedPlugin from "components/FixedPlugin/FixedPlugin.js";
 
@@ -73,7 +73,7 @@ function Admin(props) {
           })}
           <Redirect from="/admin" to="/admin/dashboard" />
         </Switch>
-        <Footer fluid />
+        {/*<Footer fluid />*/}
       </div>
       <FixedPlugin
         bgColor={backgroundColor}
