@@ -18,7 +18,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import FacebookLoginWithButton from 'react-facebook-login';
 import PanelHeader from "components/PanelHeader/PanelHeader.js";
-import firebase from 'firebase'
+import firebase from 'firebase';
 import { StyledFirebaseAuth } from "react-firebaseui/StyledFirebaseAuth";
 
 const componentClicked = () => {
@@ -28,121 +28,62 @@ const componentClicked = () => {
 const LoginButton = ({facebookResponse}) => (
   <FacebookLoginWithButton
     appId="516220549446952"
-    autoLoad={true}
-    fields="name,email,picture"
+    //autoLoad={true}
+    fields="name,email"
     onClick={componentClicked}
     callback={facebookResponse}
     icon="fa-facebook"
   />
   )
 
-function Enrole() {
-  state = {isSignedIn : false}
-  uiConfig = {
-    signInFlow = "popup",
-    signInOptions: [
-      firebase.auth.FacebookAuthProvider.PROVIDER_ID
-    ],
-    callbacks:{
-      signInSuccess: () => false
-    }
-  }
+const UserScreen = ({user}) => (
+    <>
+    <h1>Welcome {user.name}</h1>
+    <p>login email : { user.email }</p>
+    {/* <img src={user.picture.data.url} height={user.picture.height} width={user.picture.width} alt="avatar"/> */}
+    </>
+)
+
+/*function Enrole() {
+  state = {user:false}
+  facebookResponse = (response) => { console.log( response ); 
+    this.setState( {...this.state, user: response } ) }
+
   return (
     <>
       <PanelHeader size="sm" />
-      <div className="Enrole">  
-        {this.state.isSignedIN ? (
-          <div> Signed In</div>
-        ) : (
-          <div>Not Signed In</div>
-        )}
-          </div>
-
-      {/*<div className="content">
-        <Row>
-          <Col md="10">
-            <Card>
-              <CardHeader>
-                <h5 className="title">회원 가입</h5>
-              </CardHeader>
-              <CardBody>
-                <Form>
-                  <Row>
-                    <Col className="pr-1" md="4">
-                      <FormGroup>
-                        <label>회사</label>
-                        <Input
-                          defaultValue="OO항만공사"
-                          disabled
-                          placeholder="Company"
-                          type="text"
-                        />
-                      </FormGroup>
-                    </Col>
-                    <Col className="pl-2" md="4">
-                      <FormGroup>
-                        <label>회원번호</label>
-                        <Input
-                          defaultValue="12345"
-                          placeholder="Usernumber" //Username ->수정
-                          type="text"
-                        />
-                      </FormGroup>
-                    </Col>
-                    <Col className="pl-3" md="2">
-                      <FormGroup>
-                        <label>나이</label>
-                        <Input
-                          defaultValue="40세"
-                          placeholder="Usernumber" //Username ->수정
-                          type="text"
-                        />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col className="pl-1" md="5">
-                      <FormGroup>
-                        <label>성</label>
-                        <Input
-                          defaultValue="홍"
-                          placeholder="Company"
-                          type="text"
-                        />
-                      </FormGroup>
-                    </Col>
-                    <Col className="pl-2" md="5">
-                      <FormGroup>
-                        <label>이름</label>
-                        <Input
-                          defaultValue="길동"
-                          placeholder="Last Name"
-                          type="text"
-                        />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col md="10">
-                      <FormGroup>
-                        <label>Email</label>
-                        <Input
-                          defaultValue="honggildong@gmail.com"
-                          placeholder="Email" //HomeAddress ->수정
-                          type="text"
-                        />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  
-                </Form>
-              </CardBody>
-            </Card>
-          </Col>
-        </Row>
-  </div>*/}
+      <button> {
+           
+           // Facebook provider object is created here.
+            const FacebookAuth = 
+                new firebase.auth.FacebookAuthProvider();
+                 
+           // using the object we will authenticate the user.
+             
+               firebase.auth().signInWithPopup(FacebookAuth);
+                }
+            Sign in with Facebook
+      </button>
+      
     </>
   );
+}*/
+class App extends React.Component {
+  state = {user:false}
+  facebookResponse = (response) => { console.log( response ); this.setState( {...this.state, user: response } ) }
+
+  render() {
+    return (
+      <>
+      <PanelHeader size="sm" />
+      <div style={{ margin: "auto", textAlign: "center", paddingTop: "2em" }}>
+        { this.state.user ? <UserScreen user={this.state.user}/> :
+          <LoginButton facebookResponse={this.facebookResponse}/>
+        }
+      </div>
+      </>
+    )
+  }
 }
 
-export default Enrole;
+export default App;

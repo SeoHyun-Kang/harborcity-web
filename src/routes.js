@@ -10,6 +10,7 @@ import Maps from "views/Maps.js";
 import Upgrade from "views/Upgrade.js";
 import UserPage from "views/UserPage.js";
 import Enrole from "views/Enrole.js";
+import p_data from "fdatabase.js";
 
 var dashRoutes = [
   {
@@ -63,6 +64,14 @@ var dashRoutes = [
     component: Enrole,
     layout: "/admin",
   },
+  {
+    path: "/fdatabase",
+    name: "사용자 데이터",
+    icon: "emoticons_satisfied",
+    component: p_data,
+    layout: "/admin",
+  },
+
   /*{
     path: "/typography",
     name: "Typography",
