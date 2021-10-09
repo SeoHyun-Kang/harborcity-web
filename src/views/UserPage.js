@@ -43,12 +43,22 @@ function User() {
                         />
                       </FormGroup>
                     </Col>
-                    <Col className="px-1" md="3">
+                    <Col className="pr-1" md="3">
                       <FormGroup>
                         <label>회원번호</label>
                         <Input
                           defaultValue="12345"
                           placeholder="Usernumber" //Username ->수정
+                          type="text"
+                        />
+                      </FormGroup>
+                    </Col>
+                    <Col className="pr-1" md="4">
+                      <FormGroup>
+                        <label>입사 일자</label>
+                        <Input
+                          defaultValue="2021년 01월 01일"
+                          placeholder="Enrolldate"
                           type="text"
                         />
                       </FormGroup>
@@ -77,6 +87,28 @@ function User() {
                     </Col>
                   </Row>
                   <Row>
+                    <Col className="pr-1" md="6">
+                      <FormGroup>
+                        <label>부서</label>
+                        <Input
+                          defaultValue="관리 부서"
+                          placeholder="Class"
+                          type="text"
+                        />
+                      </FormGroup>
+                    </Col>
+                    <Col className="pl-1" md="6">
+                      <FormGroup>
+                        <label>직위</label>
+                        <Input
+                          defaultValue="신입사원"
+                          placeholder="Role"
+                          type="text"
+                        />
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <Row>
                     <Col md="12">
                       <FormGroup>
                         <label>Email</label>
@@ -93,7 +125,7 @@ function User() {
               </CardBody>
             </Card>
           </Col>
-          <Col md="4">
+          <Col md="3">
             <Card className="card-user">
               <div className="image">
                 <img alt="..." src={require("assets/img/bg5.jpg").default} />
@@ -101,26 +133,32 @@ function User() {
               <CardBody>
                 <div className="author">
                   <img
-                    alt="..."
                     className="avatar border-gray"
                     src={require("assets/img/default-avatar.png").default}
                   />
                   <p className="description">홍 길동</p>
                 </div>
-                // 교육 이수 내역 적기
-              </CardBody>
-              <hr />
-              <div className="button-container">
-                <Button
-                  className="btn-neutral btn-icon btn-round"
-                  color="default"
-                  href="#pablo"
-                  onClick={(e) => e.preventDefault()}
-                  size="lg"
-                >
-                  <i className="fab fa-facebook-f" />
-                </Button>
-                <Button
+                <hr />
+                <div className="button-container">
+                  <Button
+                    className="btn-neutral btn-icon btn-round"
+                    color="default"
+                    onClick={(e) => e.preventDefault()}
+                    size="lg"
+                  >
+                    <i className="fab fa-facebook-f" />
+                  </Button>
+                </div>
+              </CardBody>                               
+            </Card>
+          </Col>
+        </Row>
+      </div>
+    </>
+  );
+}
+//다른 버튼들
+{/* <Button
                   className="btn-neutral btn-icon btn-round"
                   color="default"
                   href="#pablo"
@@ -137,14 +175,6 @@ function User() {
                   size="lg"
                 >
                   <i className="fab fa-google-plus-g" />
-                </Button>
-              </div>
-            </Card>
-          </Col>
-        </Row>
-      </div>
-    </>
-  );
-}
+</Button> */}
 
 export default User;

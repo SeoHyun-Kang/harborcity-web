@@ -38,8 +38,9 @@ const LoginButton = ({facebookResponse}) => (
 
 const UserScreen = ({user}) => (
     <>
-    <h1>Welcome {user.name}</h1>
-    <p>login email : { user.email }</p>
+    <h1>로그인 완료 {user.name}</h1>
+    <p>로그인 계정(이메일) : { user.email }</p>
+    
     {/* <img src={user.picture.data.url} height={user.picture.height} width={user.picture.width} alt="avatar"/> */}
     </>
 )

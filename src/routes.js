@@ -11,6 +11,7 @@ import Upgrade from "views/Upgrade.js";
 import UserPage from "views/UserPage.js";
 import Enrole from "views/Enrole.js";
 import p_data from "fdatabase.js";
+import Chatbot from "views/Chatbot.js";
 
 var dashRoutes = [
   {
@@ -18,6 +19,22 @@ var dashRoutes = [
     name: "홈",
     icon: "business_bulb-63",
     component: Dashboard,
+    layout: "/admin",
+  },
+
+  {
+    path: "/fdatabase",
+    name: "사용자 데이터",
+    icon: "business_chart-pie-36",
+    component: p_data,
+    layout: "/admin",
+  },
+
+  {
+    path: "/chatbot",
+    name: "AI 챗봇",
+    icon: "ui-2_chat-round",
+    component: Chatbot,
     layout: "/admin",
   },
 
@@ -64,13 +81,7 @@ var dashRoutes = [
     component: Enrole,
     layout: "/admin",
   },
-  {
-    path: "/fdatabase",
-    name: "사용자 데이터",
-    icon: "emoticons_satisfied",
-    component: p_data,
-    layout: "/admin",
-  },
+  
 
   /*{
     path: "/typography",
