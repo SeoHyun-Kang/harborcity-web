@@ -17,9 +17,20 @@ import {
 import PanelHeader from "components/PanelHeader/PanelHeader.js";
 
 function Chatbot() {
-    return(
-        <PanelHeader size="sm" />
-    );
+  return (
+    <>
+      <PanelHeader size="sm" />
+      <div className="chatbot">
+        <Row>
+          <Col md={12}>
+            <Card>
+              <CardHeader>
+                  <a href="./chatbot/index.html">챗봇과 대화하기</a>
+              </CardHeader>
+            </Card>
+          </Col>
+        </Row>
+      </div>
+    </>
+  );
 }
-
-export default Chatbot;
